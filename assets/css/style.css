@@ -378,22 +378,17 @@ h1, h2, h3, h4, h5, h6 {
   right: 0;
 }
 
-#hero{
+#hero .hero-container {
   position: absolute;
   bottom: 0;
   top: 0;
   left: 0;
   right: 0;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
   text-align: center;
-}
-
-.hero-container{
-  margin-left: 100px;
-  margin-right: 100px;
 }
 
 #hero h1 {
