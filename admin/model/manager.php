@@ -6,7 +6,7 @@ require_once 'bdd.php';
 class manager
 {
 
-    public function connexion(Utilisateur $user){
+    public function Connexion(Utilisateur $user){
 
         $bdd = new bdd();
 
@@ -23,42 +23,44 @@ class manager
             session_start();
             $SESSION['id'] = $donne['id'];
             $SESSION['username'] = $donne['username'];
+            $SESSION['role'] = $donne['role'];
         }
-        else{
-            header("location : ../views/login.html");
-        }
-
-        if ($SESSION['id'] = '1' AND $SESSION['username'] = 'admin'){
-            header("location : ../index.php");
-        }
-        else{
-            header("location : ../../index.html");
-        }
-
     }
 
-    public function Ins(Utilisateur $user){
+    public function Inscription(Utilisateur $user){
 
-        $bdd = new bdd();
+        if ($user->getPassword() == $user->getRepassword()){
+            $bdd = new bdd();
 
-        $req=$bdd->getStart()->prepare('INSERT INTO user(nom, prenom, age, metier, pays) VALUES(:nom, :prenom, :age, :metier, :pays)');
-       $a =  $req->execute(array(
-            'nom'=>$user->getNom(),
-            'prenom'=>$user->getPrenom(),
-            'age'=>$user->getAge(),
-            'metier'=>$user->getMetier(),
-            'pays'=>$user->getPays()
+            $req=$bdd->getStart()->prepare('SELECT * FROM users WHERE username = :username OR mail = :mail');
+            $req->execute(array(
+                'username'=>$user->getUsername(),
+                'mail'=>$user->getMail()
+            ));
 
-        ));
+            $donne = $req->fetch();
 
+            if(empty($donne)){
+                $req1=$bdd->getStart()->prepare('INSERT INTO users(username, nom, prenom, password, mail, role) VALUES (:username, :nom, :prenom, :password, :mail, :role)');
 
-        if($a){
-            echo'ok';
+                $pass_hache = password_hash($user->getPassword(), PASSWORD_DEFAULT);
+
+                $req1->execute(array(
+                    'username'=>$user->getUsername(),
+                    'nom'=>$user->getNom(),
+                    'prenom'=>$user->getPrenom(),
+                    'password'=> $pass_hache,
+                    'mail'=>$user->getMail(),
+                    'role'=>$user->getRole()
+                ));
+            }
+            else{
+                //Utilisateur existe déjà avec un message d'erreur
+            }
         }
         else{
-           echo 'nok';
+            //Retour à la page de connexion avec un message d'erreur
         }
-
     }
 
     public function Modif(Utilisateur $user){
