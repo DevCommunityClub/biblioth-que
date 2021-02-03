@@ -370,7 +370,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #hero:before {
   content: "";
-  background: rgba(60, 65, 51, 0.4);
+  background: rgb(60, 65, 51);
   position: absolute;
   bottom: 0;
   top: 0;
@@ -1071,7 +1071,7 @@ section {
 
 .portfolio .portfolio-wrap .portfolio-info h4 {
   font-size: 20px;
-  color: #ffffff;
+  color: #656587;
   font-weight: 600;
 }
 
