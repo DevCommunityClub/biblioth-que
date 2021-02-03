@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -36,6 +37,33 @@
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Créer un compte!</h1>
                             </div>
+
+                            <?php if (isset($_SESSION['errors'])){
+                                var_dump($_SESSION);
+                                //session_destroy();
+                                ?>
+                            <div class="alert alert-success" role="alert">
+                                <p>Un problème est intervenue :</p>
+                                <ul>
+                                    <?php
+                                    if(isset($_SESSION['errors']['user'])){
+                                        echo '<li>'.$_SESSION['errors']['user'].'</li>';
+                                    }
+                                    if(isset($_SESSION['errors']['username'])){
+                                        echo '<li>'.$_SESSION['errors']['username'].'</li>';
+                                    }
+                                    if(isset($_SESSION['errors']['password'])){
+                                        echo '<li>'.$_SESSION['errors']['password'].'</li>';
+                                    }
+                                    if(isset($_SESSION['errors']['mail'])){
+                                        echo '<li>'.$_SESSION['errors']['mail'].'</li>';
+                                    }
+                                    ?>
+                                </ul>
+                            </div>
+                            <?php } ?>
+
+
 
                             <form class="user" id="form" method="post" action="../controller/traitement_register.php">
                                 <div class="form-group row">

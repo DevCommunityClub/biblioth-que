@@ -6,10 +6,13 @@ class bdd
 
     public function __construct()
     {
-
-       $this->bdd = new PDO('mysql:host=localhost;dbname=library;charset=utf8', 'root', '');
-
-
+        try {
+            $this->bdd = new PDO('mysql:host=localhost;dbname=library;charset=utf8', 'root', '');
+            $this->bdd->exec('SET CHARACTER SET utf8');
+        }
+       catch(Exception $e){
+            die('Erreur : '.$e->getMessage());
+       }
     }
 
     public function getStart(){

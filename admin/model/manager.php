@@ -29,7 +29,27 @@ class manager
 
     public function Inscription(Utilisateur $user){
 
-        if ($user->getPassword() == $user->getRepassword()){
+        session_start();
+
+        $req=$bdd->getStart()->prepare('SELECT * FROM users');
+        $req->execute(array(
+            'username'=>$user->getUsername(),
+            'mail'=>$user->getMail()
+        ));
+
+        if (empty($user->getUsername()) || !preg_match('/^[a-zA-Z0-9_]+$/', $user->getUsername())){
+            $_SESSION['errors']['username'] =  "Votre pseudo n'est pas alphanumérique";
+        }
+
+        if (empty($user->getMail() || !filter_var($user->getMail(), FILTER_VALIDATE_EMAIL))){
+            $_SESSION['errors']['mail'] = "Votre mail n'est pas valide";
+        }
+
+        if (empty($user->getPassword()) || $user->getPassword() != $user->getRepassword()){
+            $_SESSION['errors']['password'] = "Votre mot de passe n'est pas valide";
+        }
+
+        if (empty($_SESSION['errors'])){
             $bdd = new bdd();
 
             $req=$bdd->getStart()->prepare('SELECT * FROM users WHERE username = :username OR mail = :mail');
@@ -55,11 +75,11 @@ class manager
                 ));
             }
             else{
-                //Utilisateur existe déjà avec un message d'erreur
+                $_SESSION['errors']['user'] = "L'utilisateur existe déjà";
             }
         }
         else{
-            //Retour à la page de connexion avec un message d'erreur
+            header('location: ../views/register.php');
         }
     }
 
@@ -76,16 +96,6 @@ class manager
             'pays'=>$user->getPays()
 
         ));
-
-
-
-        if($a){
-            echo'ok';
-        }
-        else{
-            'nok';
-        }
-
     }
 
 }
