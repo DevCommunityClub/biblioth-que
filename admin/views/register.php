@@ -38,11 +38,8 @@
                                 <h1 class="h4 text-gray-900 mb-4">Créer un compte!</h1>
                             </div>
 
-                            <?php if (isset($_SESSION['errors'])){
-                                var_dump($_SESSION);
-                                //session_destroy();
-                                ?>
-                            <div class="alert alert-success" role="alert">
+                            <?php if (isset($_SESSION['errors'])){?>
+                            <div class="alert alert-danger" role="alert">
                                 <p>Un problème est intervenue :</p>
                                 <ul>
                                     <?php
@@ -61,7 +58,7 @@
                                     ?>
                                 </ul>
                             </div>
-                            <?php } ?>
+                            <?php } session_destroy();?>
 
 
 

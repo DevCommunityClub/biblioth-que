@@ -30,12 +30,19 @@ class manager
     public function Inscription(Utilisateur $user){
 
         session_start();
+        $bdd = new bdd();
 
-        $req=$bdd->getStart()->prepare('SELECT * FROM users');
+        $req=$bdd->getStart()->prepare('SELECT * FROM users WHERE username = :username OR mail = :mail');
         $req->execute(array(
             'username'=>$user->getUsername(),
             'mail'=>$user->getMail()
         ));
+
+        $donne = $req->fetch();
+
+        if ($donne){
+            $_SESSION['errors']['user'] = "Votre Username/Mail est déjà utilisé";
+        }
 
         if (empty($user->getUsername()) || !preg_match('/^[a-zA-Z0-9_]+$/', $user->getUsername())){
             $_SESSION['errors']['username'] =  "Votre pseudo n'est pas alphanumérique";
@@ -50,33 +57,19 @@ class manager
         }
 
         if (empty($_SESSION['errors'])){
-            $bdd = new bdd();
+            $req1=$bdd->getStart()->prepare('INSERT INTO users(username, nom, prenom, password, mail, role) VALUES (:username, :nom, :prenom, :password, :mail, :role)');
 
-            $req=$bdd->getStart()->prepare('SELECT * FROM users WHERE username = :username OR mail = :mail');
-            $req->execute(array(
+            $pass_hache = password_hash($user->getPassword(), PASSWORD_DEFAULT);
+
+            $req1->execute(array(
                 'username'=>$user->getUsername(),
-                'mail'=>$user->getMail()
+                'nom'=>$user->getNom(),
+                'prenom'=>$user->getPrenom(),
+                'password'=> $pass_hache,
+                'mail'=>$user->getMail(),
+                'role'=>$user->getRole()
             ));
 
-            $donne = $req->fetch();
-
-            if(empty($donne)){
-                $req1=$bdd->getStart()->prepare('INSERT INTO users(username, nom, prenom, password, mail, role) VALUES (:username, :nom, :prenom, :password, :mail, :role)');
-
-                $pass_hache = password_hash($user->getPassword(), PASSWORD_DEFAULT);
-
-                $req1->execute(array(
-                    'username'=>$user->getUsername(),
-                    'nom'=>$user->getNom(),
-                    'prenom'=>$user->getPrenom(),
-                    'password'=> $pass_hache,
-                    'mail'=>$user->getMail(),
-                    'role'=>$user->getRole()
-                ));
-            }
-            else{
-                $_SESSION['errors']['user'] = "L'utilisateur existe déjà";
-            }
         }
         else{
             header('location: ../views/register.php');
