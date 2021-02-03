@@ -41,20 +41,29 @@ class manager
         $donne = $req->fetch();
 
         if ($donne){
-            $_SESSION['errors']['user'] = "Votre Username/Mail est déjà utilisé";
+            $_SESSION['errors'][1] = "Votre Username/Mail est déjà utilisé";
+        }
+
+        if (empty($user->getNom()) || !preg_match('/^[a-zA-Z0-9_]+$/', $user->getNom())){
+            $_SESSION['errors'][2] =  "Votre nom n'est pas alphanumérique";
+        }
+
+        if (empty($user->getPrenom()) || !preg_match('/^[a-zA-Z0-9_]+$/', $user->getPrenom())){
+            $_SESSION['errors'][3] =  "Votre prenom n'est pas alphanumérique";
         }
 
         if (empty($user->getUsername()) || !preg_match('/^[a-zA-Z0-9_]+$/', $user->getUsername())){
-            $_SESSION['errors']['username'] =  "Votre pseudo n'est pas alphanumérique";
+            $_SESSION['errors'][4] =  "Votre pseudo n'est pas alphanumérique";
         }
 
         if (empty($user->getMail() || !filter_var($user->getMail(), FILTER_VALIDATE_EMAIL))){
-            $_SESSION['errors']['mail'] = "Votre mail n'est pas valide";
+            $_SESSION['errors'][5] = "Votre mail n'est pas valide";
         }
 
         if (empty($user->getPassword()) || $user->getPassword() != $user->getRepassword()){
-            $_SESSION['errors']['password'] = "Votre mot de passe n'est pas valide";
+            $_SESSION['errors'][6] = "Votre mot de passe n'est pas valide";
         }
+
 
         if (empty($_SESSION['errors'])){
             $req1=$bdd->getStart()->prepare('INSERT INTO users(username, nom, prenom, password, mail, role) VALUES (:username, :nom, :prenom, :password, :mail, :role)');

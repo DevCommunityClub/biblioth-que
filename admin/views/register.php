@@ -43,17 +43,10 @@
                                 <p>Un problème est intervenue :</p>
                                 <ul>
                                     <?php
-                                    if(isset($_SESSION['errors']['user'])){
-                                        echo '<li>'.$_SESSION['errors']['user'].'</li>';
-                                    }
-                                    if(isset($_SESSION['errors']['username'])){
-                                        echo '<li>'.$_SESSION['errors']['username'].'</li>';
-                                    }
-                                    if(isset($_SESSION['errors']['password'])){
-                                        echo '<li>'.$_SESSION['errors']['password'].'</li>';
-                                    }
-                                    if(isset($_SESSION['errors']['mail'])){
-                                        echo '<li>'.$_SESSION['errors']['mail'].'</li>';
+                                    var_dump($_SESSION['errors']);
+                                    for ($i=1; $i>6; $i++){
+                                        //echo '<li>'.$_SESSION['errors'][$i].'</li>';
+                                        echo '<li>'.$_SESSION['errors'][2].'</li>';
                                     }
                                     ?>
                                 </ul>
