@@ -30,7 +30,12 @@ class manager
     public function Inscription(Utilisateur $user){
 
         session_start();
-        //$_SESSION['errors'] = array();
+
+        $req=$bdd->getStart()->prepare('SELECT * FROM users');
+        $req->execute(array(
+            'username'=>$user->getUsername(),
+            'mail'=>$user->getMail()
+        ));
 
         if (empty($user->getUsername()) || !preg_match('/^[a-zA-Z0-9_]+$/', $user->getUsername())){
             $_SESSION['errors']['username'] =  "Votre pseudo n'est pas alphanumérique";
