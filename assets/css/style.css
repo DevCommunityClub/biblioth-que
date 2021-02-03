@@ -10,7 +10,11 @@
 --------------------------------------------------------------*/
 body {
   font-family: "Open Sans", sans-serif;
-  color: #fff;
+  
+}
+
+.texteblanc{
+  color: #444444;
 }
 
 a {
