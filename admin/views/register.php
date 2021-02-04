@@ -43,10 +43,8 @@
                                 <p>Un problème est intervenue :</p>
                                 <ul>
                                     <?php
-                                    var_dump($_SESSION['errors']);
-                                    for ($i=1; $i>6; $i++){
-                                        //echo '<li>'.$_SESSION['errors'][$i].'</li>';
-                                        echo '<li>'.$_SESSION['errors'][2].'</li>';
+                                    for ($i=1; $i<6; $i++){
+                                        echo '<p>'.$_SESSION['errors'][$i].'</p>';
                                     }
                                     ?>
                                 </ul>
