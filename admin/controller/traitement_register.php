@@ -4,9 +4,9 @@ require_once '../model/user.php';
 require_once '../model/manager.php';
 
 $user = new Utilisateur(array(
-    'nom' => $_POST['nom'],
-    'prenom' => $_POST['prenom'],
-    'username' => $_POST['username'],
+    'nom' => htmlspecialchars($_POST['nom']),
+    'prenom' => htmlspecialchars($_POST['prenom']),
+    'username' => htmlspecialchars($_POST['username']),
     'mail' => $_POST['mail'],
     'password' => $_POST['password'],
     'repassword' => $_POST['repassword'],

@@ -39,19 +39,19 @@
                             </div>
 
                             <?php if (isset($_SESSION['errors'])){?>
-                            <div class="alert alert-danger" role="alert">
-                                <p>Un problème est intervenue :</p>
-                                <ul>
-                                    <?php
-                                    for ($i=1; $i<6; $i++){
-                                        echo '<p>'.$_SESSION['errors'][$i].'</p>';
-                                    }
-                                    ?>
-                                </ul>
-                            </div>
-                            <?php } session_destroy();?>
-
-
+                                <div class="alert alert-danger" role="alert">
+                                    <p>Un problème est intervenue :</p>
+                                    <ul>
+                                        <?php
+                                        for ($i=1; $i<6; $i++){
+                                            if (!empty($_SESSION['errors'][$i])){
+                                                echo '<li>'.$_SESSION['errors'][$i].'</li>';
+                                            }
+                                        }
+                                        ?>
+                                    </ul>
+                                </div>
+                            <?php } session_destroy(); ?>
 
                             <form class="user" id="form" method="post" action="../controller/traitement_register.php">
                                 <div class="form-group row">
