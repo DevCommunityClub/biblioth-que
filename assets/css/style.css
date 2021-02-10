@@ -196,7 +196,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-menu .drop-down ul a:hover, .nav-menu .drop-down ul .active > a, .nav-menu .drop-down ul li:hover > a {
-  color: #94c045;
+  background-image:url("../img/fondgrisblanc.png");
 }
 
 .nav-menu .drop-down > a:after {
