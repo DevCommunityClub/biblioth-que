@@ -25,6 +25,14 @@ class manager
             $SESSION['username'] = $donne['username'];
             $SESSION['role'] = $donne['role'];
         }
+
+        if($donne['role'] = 1){
+            header("Location: ..//register.php");
+        }
+        else{
+
+        }
+
     }
 
     public function Inscription(Utilisateur $user){
@@ -60,7 +68,7 @@ class manager
                 'role'=>$user->getRole()
             ));
 
-            $Functions->Mail($user);
+            $Functions->Mail_ins($user);
 
             $r=$bdd->getStart()->prepare('SELECT id From users WHERE username = :username');
             $r->execute(array(
