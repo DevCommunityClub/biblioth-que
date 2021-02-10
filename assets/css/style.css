@@ -150,7 +150,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-menu .get-started a {
-  background: #94c045;
+  background-image:url("../img/fondgrisblanc.png");
   color: #fff;
   border-radius: 50px;
   margin: 0 15px;
@@ -158,7 +158,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-menu .get-started a:hover {
-  background: #a6ca63;
+  background-image:url("../img/fondgrisblanc.png");
   color: #fff;
 }
 
@@ -498,7 +498,7 @@ section {
 
 .breadcrumbs .breadcrumb-hero {
   text-align: center;
-  background: #94c045;
+  background-image:url("../img/fondgrisblanc.png");
   padding: 20px 0;
   color: #fff;
 }
@@ -716,7 +716,7 @@ section {
 # Cta
 --------------------------------------------------------------*/
 .cta {
-  background: #86b03c;
+  background-image:url("../img/fondgrisblanc.png");
   padding: 50px 0;
 }
 
