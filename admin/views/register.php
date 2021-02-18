@@ -19,11 +19,13 @@
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="../assets/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="../assets/css/sb-admin-3.css" rel="stylesheet">
+    <link href="../assets/css/sb-admin-2.css" rel="stylesheet">
+
 
 </head>
 
-<body class="bg-gradient-primary">
+<body class="bg-gradient-primary-simple">
 
     <div class="container">
 
