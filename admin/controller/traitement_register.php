@@ -7,9 +7,9 @@ $user = new Utilisateur(array(
     'nom' => htmlspecialchars($_POST['nom']),
     'prenom' => htmlspecialchars($_POST['prenom']),
     'username' => htmlspecialchars($_POST['username']),
-    'mail' => $_POST['mail'],
-    'password' => $_POST['password'],
-    'repassword' => $_POST['repassword'],
+    'mail' => htmlspecialchars($_POST['mail']),
+    'password' => htmlspecialchars($_POST['password']),
+    'repassword' => htmlspecialchars($_POST['repassword']),
     'role' => 2
 ));
 

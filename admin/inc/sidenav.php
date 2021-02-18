@@ -42,7 +42,7 @@
         <div class="sidebar-heading" style="font-size: 9px">Administration</div>
         <!-- Nav Item - Tables -->
         <li class="nav-item">
-            <a class="nav-link" href="utilisateur.php">
+            <a class="nav-link" href="./utilisateur.php">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Utilisateurs</span>
             </a>

@@ -1,10 +1,21 @@
 <?php
 
 require_once 'user.php';
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
+
+require 'assets/vendor/phpmailer/src/Exception.php';
+require 'assets/vendor/phpmailer/src/PHPMailer.php';
+require 'assets/vendor/phpmailer/src/SMTP.php';
+
+// Load Composer's autoloader
+require '../assets/vendor/autoload.php';
 
 class Functions
 {
     private $donne;
+    private $req;
 
     public function Errors(Utilisateur $user){
         session_start();
@@ -45,18 +56,15 @@ class Functions
         return $this->donne;
     }
 
-    public function Mail(Utilisateur $user){
-        // Import PHPMailer classes into the global namespace
-        // These must be at the top of your script, not inside a function
+    public function fetch_user(){
 
-        require_once '../assets/vendor/phpmailer/src/Exception.php';
-        require_once '../assets/vendor/phpmailer/src/PHPMailer.php';
-        require_once '../assets/vendor/phpmailer/src/SMTP.php';
+        $this->req=$bdd->getStart()->exec('SELECT * From users');
 
-        // Load Composer's autoloader
-        require_once '../assets/vendor/autoload.php';
+        return $this->req;
+    }
 
-        // Instantiation and passing `true` enables exceptions
+    public function Mail_ins(Utilisateur $user){
+
         $mail = new PHPMailer(true);
 
         try {
