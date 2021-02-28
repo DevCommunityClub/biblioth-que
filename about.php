@@ -29,73 +29,31 @@
     </section><!-- End Breadcrumbs -->
 
     <!-- ======= About Section ======= -->
-    <section id="about" class="about">
+    <section id="about" class="about" >
       <div class="container" data-aos="fade-up">
-
-        <div class="row justify-content-end">
-          <div class="col-lg-11">
-            <div class="row justify-content-end">
-
-              <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
-                <div class="count-box py-5">
-                  <i class="icofont-simple-smile"></i>
-                  <span data-toggle="counter-up">65</span>
-                  <p>Happy Clients</p>
-                </div>
-              </div>
-
-              <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
-                <div class="count-box py-5">
-                  <i class="icofont-document-folder"></i>
-                  <span data-toggle="counter-up">85</span>
-                  <p>Projects</p>
-                </div>
-              </div>
-
-              <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
-                <div class="count-box pb-5 pt-0 pt-lg-5">
-                  <i class="icofont-clock-time"></i>
-                  <span data-toggle="counter-up">12</span>
-                  <p>Years of experience</p>
-                </div>
-              </div>
-
-              <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
-                <div class="count-box pb-5 pt-0 pt-lg-5">
-                  <i class="icofont-award"></i>
-                  <span data-toggle="counter-up">15</span>
-                  <p>Awards</p>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
         <div class="row">
 
           <div class="col-lg-6 video-box align-self-baseline">
-            <img src="assets/img/about.jpg" class="img-fluid" alt="">
-            <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
+            <img src="assets/img/COVID-19.png" class="img-fluid" id="margin-top-acc" alt="">
+            
           </div>
 
-          <div class="col-lg-6 pt-3 pt-lg-0 content">
-            <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
-            <p class="font-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
-            </p>
-            <ul>
-              <li><i class="bx bx-check-double"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-              <li><i class="bx bx-check-double"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-              <li><i class="bx bx-check-double"></i> Voluptate repellendus pariatur reprehenderit corporis sint.</li>
-              <li><i class="bx bx-check-double"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
-            </ul>
-            <p>
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum
-            </p>
+          <div class="col-lg-6 pt-3 pt-lg-0 content" >
+                <h3 id="margin-top-acc">Médiathèque de Dugny</h3>
+                <p class="font-italic">
+                L'ensemble des médiathèques sont ouvertes au public, à l'exception de la médiathèque Anne Frank qui vous accueillera sur rendez-vous uniquement.
+                </p>
+                <ul id="margin-top-acc">
+                  <li><i class="bx bx-check-double"></i> Port d'un masque obligatoire dès 11 ans lors de vos déplacements dans les espaces ainsi qu'en position assise;</li>
+                  <li><i class="bx bx-check-double"></i> Nettoyage des mains à l'aide d'une solution hydroalcoolique disponible à l’entrée de chaque médiathèque;</li>
+                  <li><i class="bx bx-check-double"></i> Maintien d'une distance minimale d'un mètre entre chaque usager·ère et entre les usagers·ères et le personnel;</li>
+                  <li><i class="bx bx-check-double"></i> Suivi des indications données par les bibliothécaires-médiateurs·trices;</li>
+                  <li><i class="bx bx-check-double"></i> Respect de la signalétique et du marquage au sol mis en place;</li>
+                  <li><i class="bx bx-check-double"></i> Manipulation des documents sur place à limiter autant que faire se peut;</li>
+                  <li><i class="bx bx-check-double"></i> Limitation du temps de présence en médiathèque à deux heures, les jours d'affluence;</li>
+                  <li><i class="bx bx-check-double"></i> Respect du système "une place sur deux" instauré pour les places assises (incluant les postes informatiques).</li>
+                </ul>   
+
           </div>
 
         </div>
