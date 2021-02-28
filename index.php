@@ -11,7 +11,7 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero">
     <div class="hero-container" data-aos="fade-up">
-      <h1>Bibliothèque de Dugny</h1>
+      <h1>Médiathèque de Dugny</h1>
       <h4 style="color:white">La médiathèque Anne Frank située en centre ville, créée en avril 1987, vous accueille sur 540 m² au 1èr étage de l'Espace Victor Hugo.</h4>
       <a href="#about" class="btn-get-started scrollto">Informations</a>
     </div>
@@ -20,73 +20,31 @@
   <main id="main">
 
     <!-- ======= About Section ======= -->
-    <section id="about" class="about">
+    <section id="about" class="about" >
       <div class="container" data-aos="fade-up">
-
-        <div class="row justify-content-end">
-          <div class="col-lg-11">
-            <div class="row justify-content-end">
-
-              <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
-                <div class="count-box py-5">
-                  <i class="icofont-simple-smile"></i>
-                  <span data-toggle="counter-up">65</span>
-                  <p>Happy Clients</p>
-                </div>
-              </div>
-
-              <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
-                <div class="count-box py-5">
-                  <i class="icofont-document-folder"></i>
-                  <span data-toggle="counter-up">85</span>
-                  <p>Projects</p>
-                </div>
-              </div>
-
-              <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
-                <div class="count-box pb-5 pt-0 pt-lg-5">
-                  <i class="icofont-clock-time"></i>
-                  <span data-toggle="counter-up">12</span>
-                  <p>Years of experience</p>
-                </div>
-              </div>
-
-              <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
-                <div class="count-box pb-5 pt-0 pt-lg-5">
-                  <i class="icofont-award"></i>
-                  <span data-toggle="counter-up">15</span>
-                  <p>Awards</p>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
         <div class="row">
 
           <div class="col-lg-6 video-box align-self-baseline">
-            <img src="assets/img/about.jpg" class="img-fluid" alt="">
-            <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
+            <img src="assets/img/COVID-19.png" class="img-fluid" id="margin-top-acc" alt="">
+            
           </div>
 
-          <div class="col-lg-6 pt-3 pt-lg-0 content">
-            <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
-            <p class="font-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
-            </p>
-            <ul>
-              <li><i class="bx bx-check-double"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-              <li><i class="bx bx-check-double"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-              <li><i class="bx bx-check-double"></i> Voluptate repellendus pariatur reprehenderit corporis sint.</li>
-              <li><i class="bx bx-check-double"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
-            </ul>
-            <p>
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum
-            </p>
+          <div class="col-lg-6 pt-3 pt-lg-0 content" >
+                <h3 id="margin-top-acc">Médiathèque de Dugny</h3>
+                <p class="font-italic">
+                L'ensemble des médiathèques sont ouvertes au public, à l'exception de la médiathèque Anne Frank qui vous accueillera sur rendez-vous uniquement.
+                </p>
+                <ul id="margin-top-acc">
+                  <li><i class="bx bx-check-double"></i> Port d'un masque obligatoire dès 11 ans lors de vos déplacements dans les espaces ainsi qu'en position assise;</li>
+                  <li><i class="bx bx-check-double"></i> Nettoyage des mains à l'aide d'une solution hydroalcoolique disponible à l’entrée de chaque médiathèque;</li>
+                  <li><i class="bx bx-check-double"></i> Maintien d'une distance minimale d'un mètre entre chaque usager·ère et entre les usagers·ères et le personnel;</li>
+                  <li><i class="bx bx-check-double"></i> Suivi des indications données par les bibliothécaires-médiateurs·trices;</li>
+                  <li><i class="bx bx-check-double"></i> Respect de la signalétique et du marquage au sol mis en place;</li>
+                  <li><i class="bx bx-check-double"></i> Manipulation des documents sur place à limiter autant que faire se peut;</li>
+                  <li><i class="bx bx-check-double"></i> Limitation du temps de présence en médiathèque à deux heures, les jours d'affluence;</li>
+                  <li><i class="bx bx-check-double"></i> Respect du système "une place sur deux" instauré pour les places assises (incluant les postes informatiques).</li>
+                </ul>   
+
           </div>
 
         </div>
@@ -99,9 +57,9 @@
       <div class="container" data-aos="fade-in">
 
         <div class="text-center">
-          <h3>Call To Action</h3>
-          <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <a class="cta-btn" href="#">Call To Action</a>
+          <h3>Réservation</h3>
+          <p> Réservez vos livres, cd, films dès maintenant.</p>
+          <a class="cta-btn" href="pricing.php">Réserver</a>
         </div>
 
       </div>
@@ -112,52 +70,52 @@
       <div class="container">
 
         <div class="section-title pt-5" data-aos="fade-up">
-          <h2>Our Services</h2>
+          <h2>À Découvrir</h2>
         </div>
 
         <div class="row">
           <div class="col-md-6">
             <div class="icon-box" data-aos="fade-up">
               <div class="icon"><i class="las la-basketball-ball" style="color: #ff689b;"></i></div>
-              <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+              <h4 class="title">Jeunesse</h4>
+              <p class="description">Si vous avez entre 9 et 13 ans, nous avons de quoi vous divertir.</p>
             </div>
           </div>
           <div class="col-md-6">
             <div class="icon-box" data-aos="fade-up">
               <div class="icon"><i class="las la-book" style="color: #e9bf06;"></i></div>
-              <h4 class="title"><a href="">Dolor Sitema</a></h4>
-              <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
+              <h4 class="title">Romans</h4>
+              <p class="description">La médiathèque propose toutes sortes de romans pour les fans de lecture.</p>
             </div>
           </div>
 
           <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="icon-box">
               <div class="icon"><i class="las la-file-alt" style="color: #3fcdc7;"></i></div>
-              <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-              <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+              <h4 class="title">Documentaires</h4>
+              <p class="description">Besoin d'un renseignement ? Retrouvez le rayon documentaire dans votre médiathèque.</p>
             </div>
           </div>
           <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="icon-box">
               <div class="icon"><i class="las la-tachometer-alt" style="color:#41cf2e;"></i></div>
-              <h4 class="title"><a href="">Magni Dolores</a></h4>
-              <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+              <h4 class="title">Cinema</h4>
+              <p class="description">Retrouvez les plus grand chefs-d'oeuvre cinématographiques dans votre médiathèque.</p>
             </div>
           </div>
 
           <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
             <div class="icon-box">
               <div class="icon"><i class="las la-globe-americas" style="color: #d6ff22;"></i></div>
-              <h4 class="title"><a href="">Nemo Enim</a></h4>
-              <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
+              <h4 class="title">BD - Mangas</h4>
+              <p class="description">Si vous n'aimez pas les long romans, vous pouvez faire un tour au milieu des BD et des mangas.</p>
             </div>
           </div>
           <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
             <div class="icon-box">
               <div class="icon"><i class="las la-clock" style="color: #4680ff;"></i></div>
-              <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
-              <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
+              <h4 class="title">Musique</h4>
+              <p class="description">Vous voulez écouter de la musique ? Retrouvez tous les plus grand chanteurs à la médiathèque.</p>
             </div>
           </div>
         </div>
@@ -174,8 +132,8 @@
         <div class="row">
 
           <div class="col-lg-3 col-md-6 footer-info">
-            <h3>Serenity</h3>
-            <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus. Scelerisque felis imperdiet proin fermentum leo. Amet volutpat consequat mauris nunc congue.</p>
+            <h3>Dugny</h3>
+            <p>Dugny, est une commune française située dans le département de la Seine-Saint-Denis, en région Île-de-France. Ses habitants sont appelés les Dugnysiens et les Dugnysiennes.</p>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
@@ -208,13 +166,7 @@
 
           </div>
 
-          <div class="col-lg-3 col-md-6 footer-newsletter">
-            <h4>Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna veniam enim veniam illum dolore legam minim quorum culpa amet magna export quem marada parida nodela caramase seza.</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
-          </div>
+          
 
         </div>
       </div>
