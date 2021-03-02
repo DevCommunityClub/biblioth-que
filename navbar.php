@@ -21,7 +21,20 @@
 
           <li><a href="pricing.php">réservation</a></li>
 
-          <li class="get-started"><a href="views/login.php">Connexion</a></li>
+            <?php
+            if (isset($_SESSION['username'])){
+                if ($_SESSION['role'] == 1){
+                    echo '<li><a href="admin.php">'.$_SESSION['username'].'</a></li>';
+                }
+                elseif ($_SESSION['role'] == 2) {
+                    echo '<li><a href="espace-membre.php">'.$_SESSION['username'].'</a></li>';
+                }
+                echo '<li class="get-started"><a class="btn" href="ctl/leave_ct.php">Déconnexion</a></li>';
+            }
+            else{
+                echo '<li class="get-started"><a href="views/login.php">Connexion</a></li>';
+            }
+            ?>
         </ul>
       </nav><!-- .nav-menu -->
 

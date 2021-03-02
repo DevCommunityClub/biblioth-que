@@ -38,6 +38,8 @@ class manager
 
     public function Inscription(Utilisateur $user){
 
+        session_start();
+
         $bdd = new bdd();
         $Functions = new Functions();
 
@@ -69,18 +71,9 @@ class manager
                 'role'=>$user->getRole()
             ));
 
-            $Functions->Mail_ins($user);
-
-            $r=$bdd->getStart()->prepare('SELECT id From users WHERE username = :username');
-            $r->execute(array(
-                'username' => $user->getUsername()
-            ));
-
-            $res = $r->fetch();
-            $user->setId($res);
+            //$Functions->Mail_ins($user);
 
             $_SESSION['username'] = $user->getUsername();
-            $_SESSION['id'] = $user->getId();
 
             header("Location: ../index.php");
 
