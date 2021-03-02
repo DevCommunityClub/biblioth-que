@@ -10,7 +10,6 @@ class Utilisateur
     private $repassword;
     private $mail;
     private $role;
-    private $checkbox;
 
     public function __construct(array $donnees)
     {
@@ -74,10 +73,6 @@ class Utilisateur
         return $this->role;
     }
 
-    public function getCheckbox()
-    {
-        return $this->checkbox;
-    }
 
     // Liste des setters
 
@@ -163,14 +158,6 @@ class Utilisateur
         {
             // Si c'est le cas, on affecte la valeur à l'attribut id.
             $this->role = $role;
-        }
-    }
-
-    public function setCheckbox($checkbox)
-    {
-        if (is_string($checkbox))
-        {
-            $this->checkbox = $checkbox;
         }
     }
 
