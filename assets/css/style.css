@@ -9,6 +9,7 @@
 # General
 --------------------------------------------------------------*/
 #img-size{
+  margin: 5%;
   border: solid 1px black;
 }
 
@@ -18,7 +19,7 @@
 }
 
 #Item_res{
-  margin: 0px 75px;
+  margin: 0px 150px;
   margin-top: 3.5%;
 }
 
