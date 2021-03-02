@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php include "header.html"; ?>
+<?php include "header.php"; ?>
 
 <body>
 
   <!-- ======= Header ======= -->
-  <?php include "navbar.html"; ?>
+  <?php include "navbar.php"; ?>
 
   <main id="main">
 

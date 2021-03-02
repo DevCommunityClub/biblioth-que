@@ -4,8 +4,10 @@ require_once 'user.php';
 require_once 'bdd.php';
 require_once 'Functions.php';
 
+
 class manager
 {
+
     public function Connexion(Utilisateur $user){
 
         $bdd = new bdd();
@@ -24,15 +26,14 @@ class manager
             $SESSION['id'] = $donne['id'];
             $SESSION['username'] = $donne['username'];
             $SESSION['role'] = $donne['role'];
-        }
 
-        if($donne['role'] = 1){
-            header("Location: ..//register.php");
+            if($donne['role'] == 1){
+                header("Location: ../admin.php ");
+            }
+            elseif($donne['role'] == 2){
+                header("Location: ../index.php ");
+            }
         }
-        else{
-
-        }
-
     }
 
     public function Inscription(Utilisateur $user){

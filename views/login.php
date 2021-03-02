@@ -42,7 +42,7 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Heureux de vous revoir !</h1>
                                     </div>
-                                    <form id="form" class="user" method="post" action="#">
+                                    <form id="form" class="user" method="post" action="../traitement/traitement_login.php">
                                         <div class="form-group">
                                             <input type="text" class="form-control form-control-user"
                                                    name="username" placeholder="Entrer votre pseudo ou email">
@@ -50,12 +50,6 @@
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user"
                                                    name="password" placeholder="Mot de passe">
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="custom-control custom-checkbox small">
-                                                <input type="checkbox" name="checkbox" class="custom-control-input" id="customCheck">
-                                                <label class="custom-control-label" for="customCheck">Mémoriser le mot de passe</label>
-                                            </div>
                                         </div>
                                         <a href="javascript:;" onclick="document.getElementById('form').submit()" class="btn btn-primary btn-user btn-block">
                                             Connectez-vous

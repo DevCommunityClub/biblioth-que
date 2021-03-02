@@ -55,7 +55,7 @@
                                 </div>
                             <?php } session_destroy(); ?>
 
-                            <form class="user" id="form" method="post" action="../controller/traitement_register.php">
+                            <form class="user" id="form" method="post" action="../traitement/traitement_register.php">
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input type="text" class="form-control form-control-user" id="exampleFirstName"
