@@ -35,11 +35,11 @@
         <div class="card mb-3" id = "Item_res">
           <div class="row g-0">
             <div class="col-md-4">
-              <img src="https://lh3.googleusercontent.com/proxy/wFioURQfwTdPdt8DKqJrXGc7ecL1lT6DsPyshm86E63D0mXLttBhpWYg1WgO_CzFzIGirINpjWCQRWEYqTtF1DrAnqjOG_Ie1d_hHKfYjxa2IXeaK8SC8PLHiW934o8B9DCbOUgh" alt="..." id ="img-size">
+              <img src="https://static.fnac-static.com/multimedia/Images/FR/NR/4a/dd/ae/11459914/1507-1/tsp20200130165132/Max-et-Lili-ont-peur-du-noir.jpg" alt="..." style ="max width : 500px" id ="img-size">
             </div>
             <div class="col-md-8">
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
+                <h1 class="card-title">Card title</h1>
                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                 <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
               </div>
