@@ -17,40 +17,54 @@
         <div class="card-body">
             <div class="table-responsive">
                 <?php
-
                     $function = new Functions();
-
-                    var_dump($function->fetch_user());
-
+                    $function->fetch_user();
+                    $a = $function->getReq();
                 ?>
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
+                            <th>Id</th>
+                            <th>Username</th>
                             <th>Nom</th>
                             <th>Prénom</th>
-                            <th>Pseudo</th>
                             <th>Mail</th>
-                            <th>Date d'inscription</th>
+                            <th>Rôle</th>
                             <th>Modification</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Michael Bruce</td>
-                            <td>Javascript Developer</td>
-                            <td>Singapore</td>
-                            <td>29</td>
-                            <td>2011/06/27</td>
-                            <td>$183,000</td>
-                        </tr>
+                    <?php
+                    $count_1 = count($a);
+                    for ($i=0;$i<$count_1;$i++){
+
+                        if ($a[$i]['role'] == 1){
+                            $a[$i]['role'] = "admin";
+                        }
+                        elseif ($a[$i]['role'] == 2){
+                            $a[$i]['role'] = "user";
+                        }
+
+                        echo '<tr>';
+                        echo '<td>'.$a[$i]['id'].'</td>';
+                        echo '<td>'.$a[$i]['username'].'</td>';
+                        echo '<td>'.$a[$i]['nom'].'</td>';
+                        echo '<td>'.$a[$i]['prenom'].'</td>';
+                        echo '<td>'.$a[$i]['mail'].'</td>';
+                        echo '<td>'.$a[$i]['role'].'</td>';
+                        echo '<td>'.$a[$i]['role'].'</td>';
+                        echo '</tr>';
+                    }
+                    ?>
                     </tbody>
                     <tfoot>
                     <tr>
+                        <th>Id</th>
+                        <th>Username</th>
                         <th>Nom</th>
                         <th>Prénom</th>
-                        <th>Pseudo</th>
                         <th>Mail</th>
-                        <th>Date d'inscription</th>
+                        <th>Rôle</th>
                         <th>Modification</th>
                     </tr>
                     </tfoot>
@@ -66,7 +80,7 @@
 <footer class="sticky-footer bg-white">
     <div class="container my-auto">
         <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2020</span>
+            <span>Copyright &copy; DevCommunityClub</span>
         </div>
     </div>
 </footer>
