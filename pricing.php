@@ -42,6 +42,9 @@
                 <h1 class="card-title">Card title</h1>
                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                 <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <form action = "#" method = "get" id = "btn-fresh">
+                  <input type = "submit" name = "réserver" value = "Réserver">
+                </form>
               </div>
             </div>
           </div>

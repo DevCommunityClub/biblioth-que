@@ -19,7 +19,7 @@
 
                     if (isset($search))
                         {
-                        $req = $bdd->prepare("SELECT * FROM media WHERE title LIKE ?");
+                        $req = $bdd->prepare("SELECT * FROM media WHERE Titre LIKE ?");
                         $req->execute(array("%".$search."%", "%".$search."%"));
                         }
                     else
