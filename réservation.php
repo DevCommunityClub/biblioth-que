@@ -45,7 +45,7 @@
                         <h1 class="card-title"><?php echo $a[$i]['Titre']; ?></h1>
                         <p class="card-text"><?php echo $a[$i]['Description']; ?></p>
                         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        <a href="" class="btn btn-primary btn-user btn-block">
+                        <a href="pickaday_res.php" id="numId" class="btn btn-primary btn-user btn-block" onclick="numId()">
                             Réservez maintenant
                         </a>
                     </div>
@@ -63,3 +63,11 @@
   </main><!-- End #main -->
 
 <?php include "inc/footer.php"; ?>
+
+
+<script type="text/javascript"> 
+  function numId(){
+  const numId = document.getElementById('numId').value;
+  console.log(document.getElementById('numId').value);
+  }
+</script>
