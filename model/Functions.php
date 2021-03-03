@@ -68,6 +68,17 @@ class Functions
         }
     }
 
+    public function fetch_media(){
+        $bdd = new bdd();
+
+        $req=$bdd->getStart()->prepare('SELECT * FROM media ');
+        $req->execute();
+        $donne = $req->fetchAll();
+        if ($donne){
+            $this->setReq($donne);
+        }
+    }
+
     public function Mail_Contact(Utilisateur $user)
     {
         // Replace contact@example.com with your real receiving email address

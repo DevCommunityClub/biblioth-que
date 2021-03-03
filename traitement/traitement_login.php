@@ -5,7 +5,7 @@ require_once '../model/manager.php';
 
 $user = new Utilisateur(array(
     'username'=> $_POST['username'],
-    'password'=>$_POST['password']
+    'password'=> $_POST['password']
     ));
 
 $co = new manager();

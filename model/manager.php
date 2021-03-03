@@ -11,6 +11,7 @@ class manager
     public function Connexion(Utilisateur $user){
 
         $bdd = new bdd();
+        $Functions = new Functions();
 
         $req=$bdd->getStart()->prepare('SELECT * FROM users WHERE username = :username OR mail = :username');
         $req->execute(array(
@@ -19,9 +20,13 @@ class manager
 
         $donne = $req->fetch();
 
+        if ($donne){
+            $Functions->setDonne($donne);
+        }
+
         $isPasswordCorrect = password_verify($user->getPassword(), $donne['password']);
 
-        if(!empty($donne) AND !empty($isPasswordCorrect)){
+        if (!empty($donne) AND !empty($isPasswordCorrect)){
             session_start();
             $SESSION['id'] = $donne['id'];
             $SESSION['username'] = $donne['username'];
@@ -33,6 +38,9 @@ class manager
             elseif($donne['role'] == 2){
                 header("Location: ../index.php ");
             }
+        }
+        else{
+            header("Location: ../views/login.php");
         }
     }
 
