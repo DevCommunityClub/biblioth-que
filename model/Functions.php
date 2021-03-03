@@ -62,10 +62,8 @@ class Functions
         $req=$bdd->getStart()->prepare('SELECT * FROM users ');
         $req->execute();
         $donne = $req->fetchAll();
-        if ($donne){
-            $this->setReq($donne);
-        }
-    }
+        $this->setReq($donne);
+      }
 
     public function fetch_media(){
         $bdd = new bdd();
@@ -73,9 +71,7 @@ class Functions
         $req=$bdd->getStart()->prepare('SELECT * FROM media ');
         $req->execute();
         $donne = $req->fetchAll();
-        if ($donne){
-            $this->setReq($donne);
-        }
+        $this->setReq($donne);
     }
 
     public function Mail_Contact(Utilisateur $user)
