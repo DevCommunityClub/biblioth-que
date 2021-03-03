@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-		<?php require_once ?>
+		<!--<?php require_once 'Functions.php' ?>-->
 		<script src="assets/js/moment.js"></script>
         <script src="assets/js/pikaday.js"></script>
         <script src="assets/js/script.js"></script>
@@ -13,7 +13,7 @@
 	<title></title>
 
 </head>
-<body class="bg-gradient-primary-simple">
+<body class="bg-gradient-primary-simple" id="centrer-objet">
 
 			<div class="dates-wrapper group">
 			<?php

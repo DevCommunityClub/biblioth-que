@@ -12,6 +12,10 @@
  */
 @import "compass/css3";
 
+#centrer-objet{
+  text-align: center;
+}
+
 * {
   box-sizing: border-box;
 }
