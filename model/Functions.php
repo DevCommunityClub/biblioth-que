@@ -65,6 +65,15 @@ class Functions
         $this->setReq($donne);
       }
 
+    public function fetch_search(){
+        $bdd = new bdd();
+
+        $req=$bdd->getStart()->prepare('SELECT id FROM media');
+        $req->execute();
+        $donne = $req->fetchAll();
+        $this->setReq($donne);
+      }
+
     public function fetch_media(){
         $bdd = new bdd();
 
