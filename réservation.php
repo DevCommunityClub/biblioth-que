@@ -2,6 +2,7 @@
 
 <?php include "inc/navbar.php"; ?>
 
+<?php
   <main id="main">
 
     <!-- ======= Breadcrumbs ======= -->
@@ -29,28 +30,40 @@
         <div class="card mb-3" id = "Item_res">
           <div class="row g-0">
             <div class="col-md-4">
-              <img src="https://static.fnac-static.com/multimedia/Images/FR/NR/4a/dd/ae/11459914/1507-1/tsp20200130165132/Max-et-Lili-ont-peur-du-noir.jpg" alt="..." style ="max width : 500px" id ="img-size">
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h1 class="card-title">Card title</h1>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                <a href="javascript:;" onclick="document.getElementById('form').submit()" class="btn btn-primary btn-user btn-block">
-                  Réservez maintenant
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
+              <?php
+                $function = new Functions();
+                $function->fetch_media();
+                $a = $function->getReq();
+                var_dump($a);
+                die();
+              ?>
 
-    </section><!-- End Breadcrumbs -->
+                <div class="card mb-3" id = "Item_res">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                    //<?php
+                      //$count_1 = count($a);
+                      //for ($i=0; $i <$count_1 ; $i++) {
+                        //echo '<img src='.$a[$i]['Lien_image'].'alt="..." style ="width : 200px" id ="img-size">';
+                        //echo'</div>';
+                        //echo'<div class="col-md-8">';
+                        //echo'<div class="card-body">';
+                      //  echo'<h1 class="card-title">'.$a[$i]['Titre'].'</h1>';
+                    //    echo'<p class="card-text">'.$a[$i]['Description'].'</p>';
+                  //      echo'<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>';
+                //        echo'<a href=" class="btn btn-primary btn-user btn-block"> Réservez maintenant';
+              //            echo'</div>';
+          //            }
+        //              ?>
+      //            </div>
+    //            </div>
+            </section><!-- End Breadcrumbs -->
 
-    
+
 
     <!-- ======= Pricing Section ======= -->
     <section id="pricing" class="pricing">
-      
+
     </section><!-- End Pricing Section -->
 
   </main><!-- End #main -->
