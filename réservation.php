@@ -45,9 +45,10 @@
                         <h1 class="card-title"><?php echo $a[$i]['Titre']; ?></h1>
                         <p class="card-text"><?php echo $a[$i]['Description']; ?></p>
                         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        <a href="pickaday_res.php" id="numId" class="btn btn-primary btn-user btn-block" onclick="numId()">
-                            Réservez maintenant
-                        </a>
+                        <form action="pickaday_res.php" method="get">
+                            <input name="id" hidden value="<?php echo $a[$i]['id']; ?>">
+                            <input type="submit" class="btn btn-primary btn-user btn-block" value="Réservez maintenant">
+                        </form>
                     </div>
                 </div>
             </div>
