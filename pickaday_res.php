@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+		<?php require_once ?>
 		<script src="assets/js/moment.js"></script>
         <script src="assets/js/pikaday.js"></script>
         <script src="assets/js/script.js"></script>
@@ -16,7 +16,11 @@
 <body class="bg-gradient-primary-simple">
 
 			<div class="dates-wrapper group">
-			  
+			<?php
+				$function = new Functions();
+                $function->fetch_user();
+                $a = $function->getReq();
+			?>
 			  	<div class="field clearfix date-range-start date-wrapper">
 				    <div class="label">
 				      <label for="datepicker-start">Date Emprunt:</label>
