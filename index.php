@@ -53,7 +53,7 @@
         <div class="text-center">
           <h3>Réservation</h3>
           <p> Réservez vos livres, cd, films dès maintenant.</p>
-          <a class="cta-btn" href="pricing.php">Réserver</a>
+          <a class="cta-btn" href="réservation.php">Réserver</a>
         </div>
 
       </div>
