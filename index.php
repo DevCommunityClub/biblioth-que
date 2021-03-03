@@ -14,7 +14,7 @@
     <div class="hero-container" data-aos="fade-up">
       <h1>Médiathèque de Dugny</h1>
       <h4 style="color:white">La médiathèque Anne Frank située en centre ville, créée en avril 1987, vous accueille sur 540 m² au 1èr étage de l'Espace Victor Hugo.</h4>
-      <a href="#about" class="btn-get-started scrollto">Informations</a>
+      <a href="about.php" class="btn-get-started scrollto">Informations</a>
     </div>
   </section><!-- End Hero -->
 
@@ -60,7 +60,7 @@
         <div class="text-center">
           <h3>Réservation</h3>
           <p> Réservez vos livres, cd, films dès maintenant.</p>
-          <a class="cta-btn" href="pricing.php">Réserver</a>
+          <a class="cta-btn" href="réservation.php">Réserver</a>
         </div>
 
       </div>
@@ -140,10 +140,10 @@
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Lien utiles</h4>
             <ul>
-              <li><a href="#">Acceuil</a></li>
-              <li><a href="#">à propos</a></li>
-              <li><a href="#">Services</a></li>
-              <li><a href="#">réservation</a></li>
+              <li><a href="index.php">Acceuil</a></li>
+              <li><a href="about.php">à propos</a></li>
+              <li><a href="contact.php">Contact</a></li>
+              <li><a href="réservation.php">réservation</a></li>
             </ul>
           </div>
 

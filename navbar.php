@@ -19,7 +19,7 @@
             </ul>
           </li>
 
-          <li><a href="pricing.php">réservation</a></li>
+          <li><a href="réservation.php">réservation</a></li>
 
             <?php
             if (isset($_SESSION['username'])){

@@ -22,7 +22,7 @@
       </div>
       <div class="container">
         <ol>
-          <li><a href="index.html">Acceuil</a></li>
+          <li><a href="index.php">Acceuil</a></li>
           <li>Contact</li>
         </ol>
       </div>
@@ -114,10 +114,10 @@
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Lien utiles</h4>
             <ul>
-              <li><a href="#">Acceuil</a></li>
-              <li><a href="#">à propos</a></li>
-              <li><a href="#">Services</a></li>
-              <li><a href="#">réservation</a></li>
+              <li><a href="index.php">Acceuil</a></li>
+              <li><a href="about.php">à propos</a></li>
+              <li><a href="contact.php">Contact</a></li>
+              <li><a href="réservation.php">réservation</a></li>
             </ul>
           </div>
 
