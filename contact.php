@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php include "inc/header_1.php"; ?>
 
-<?php include "header.php"; ?>
-
-<body>
-
-  <!-- ======= Header ======= -->
-  <?php include "navbar.php"; ?>
+<?php include "inc/navbar.php"; ?>
 
   <main id="main">
 

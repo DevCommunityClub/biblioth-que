@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -42,6 +43,20 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Heureux de vous revoir !</h1>
                                     </div>
+                                    <?php if (!empty($_SESSION['errors'])){?>
+                                        <div class="alert alert-danger" role="alert">
+                                            <p>Un problème est intervenue :</p>
+                                            <ul>
+                                                <?php
+                                                for ($i=1; $i<6; $i++){
+                                                    if (!empty($_SESSION['errors'][$i])){
+                                                        echo '<li>'.$_SESSION['errors'][$i].'</li>';
+                                                    }
+                                                }
+                                                ?>
+                                            </ul>
+                                        </div>
+                                    <?php } session_destroy(); ?>
                                     <form id="form" class="user" method="post" action="../traitement/traitement_login.php">
                                         <div class="form-group">
                                             <input type="text" class="form-control form-control-user"
