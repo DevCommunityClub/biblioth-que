@@ -34,7 +34,6 @@ class Functions
         if (empty($user->getPassword()) || $user->getPassword() != $user->getRepassword()) {
             $_SESSION['errors'][5] = "Votre mot de passe n'est pas valide";
         }
-
     }
 
     public function setDonne($donne)

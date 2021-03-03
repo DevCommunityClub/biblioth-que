@@ -11,7 +11,6 @@ class manager
     public function Connexion(Utilisateur $user){
 
         $bdd = new bdd();
-        $Functions = new Functions();
 
         $req=$bdd->getStart()->prepare('SELECT * FROM users WHERE username = :username OR mail = :username');
         $req->execute(array(
@@ -21,25 +20,25 @@ class manager
         $donne = $req->fetch();
 
         if ($donne){
-            $Functions->setDonne($donne);
-        }
 
-        $isPasswordCorrect = password_verify($user->getPassword(), $donne['password']);
+            $isPasswordCorrect = password_verify($user->getPassword(), $donne['password']);
 
-        if (!empty($donne) AND !empty($isPasswordCorrect)){
-            session_start();
-            $SESSION['id'] = $donne['id'];
-            $SESSION['username'] = $donne['username'];
-            $SESSION['role'] = $donne['role'];
+            if (!empty($donne) AND !empty($isPasswordCorrect)){
+                session_start();
+                $_SESSION['id'] = $donne['id'];
+                $_SESSION['username'] = $donne['username'];
+                $_SESSION['role'] = $donne['role'];
 
-            if($donne['role'] == 1){
-                header("Location: ../admin.php ");
-            }
-            elseif($donne['role'] == 2){
-                header("Location: ../index.php ");
+                if($donne['role'] == 1){
+                    header("Location: ../admin.php ");
+                }
+                elseif($donne['role'] == 2){
+                    header("Location: ../index.php ");
+                }
             }
         }
         else{
+            $_SESSION['errors'][0] = "Utilisateur n'existe pas";
             header("Location: ../views/login.php");
         }
     }
@@ -66,7 +65,7 @@ class manager
         $Functions->Errors($user);
 
         if (empty($_SESSION['errors'])){
-            $req1=$bdd->getStart()->prepare('INSERT INTO users(username, nom, prenom, password, mail, role) VALUES(:username, :nom, :prenom, :password, :mail, :role)');
+            $req1=$bdd->getStart()->prepare('INSERT INTO users (username, nom, prenom, password, mail, role) VALUES (:username, :nom, :prenom, :password, :mail, :role)');
 
             $pass_hache = password_hash($user->getPassword(), PASSWORD_DEFAULT);
 
@@ -76,12 +75,14 @@ class manager
                 'prenom'=>$user->getPrenom(),
                 'password'=> $pass_hache,
                 'mail'=>$user->getMail(),
-                'role'=>$user->getRole()
+                'role'=>(int)$user->getRole()
             ));
+
 
             //$Functions->Mail_ins($user);
 
             $_SESSION['username'] = $user->getUsername();
+            $_SESSION['role'] = $user->getRole();
 
             header("Location: ../index.php");
 
