@@ -141,4 +141,17 @@ class Functions
 
         echo $contact->send();
     }
+
+    public function date_emprunt()
+    {
+        $query = mysql_query("SELECT Date_emprunt FROM media WHERE Date_emprunt = '$Date_emprunt'");
+            if(Date_emprunt($query) == NULL){
+                // Pseudo déjà utilisé
+                echo 'Ce livre est disponible';
+            }else{
+                // Pseudo libre
+                mysql_query("INSERT INTO media (Date_retour) VALUES ((SELECT Date_emprunt INTERVAL 1 MONTH)))");
+            }
+
+    }
 }
