@@ -31,7 +31,6 @@
         $function = new Functions();
         $function->fetch_media();
         $a = $function->getReq();
-
         $count_1 = count($a);
         for ($i = 0; $i < $count_1; $i++) {
         ?>
@@ -44,8 +43,10 @@
                     <div class="card-body">
                         <h1 class="card-title"><?php echo $a[$i]['Titre']; ?></h1>
                         <p class="card-text"><?php echo $a[$i]['Description']; ?></p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        <form action="pickaday_res.php" method="get">
+                        <form>
+                            <button type="button" class="btn btn-secondary mb-4"><?php echo $a[$i]['Type']; ?></button>
+                        </form>
+                        <form action="page-reservation.php" method="get">
                             <input name="id" hidden value="<?php echo $a[$i]['id']; ?>">
                             <input type="submit" class="btn btn-primary btn-user btn-block" value="Réservez maintenant">
                         </form>

@@ -6,26 +6,34 @@
 
 <?php
         $function = new Functions();
-        $function->fetch_media();
+        $function->setId($_GET['id']);
+        $function->fetch_media_info();
         $a = $function->getReq();
 ?>
+<main id="main">
 
-<body class="bg-gradient-primary-simple" id="centrer-objet">
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+        <div class="breadcrumb-hero">
+            <div class="container">
+                <div class="breadcrumb-hero">
+                    <h2>Réservation</h2>
+                    <p>Choissisez une date les livres que vous souhaitez réserver.</p>
+                </div>
+            </div>
+        </div>
 
         <div class="card mb-3" id = "Item_res">
             <div class="row g-0">
                 <div class="col-md-4">
-                    <img src="<?php echo $a[$i]['Lien_image']; ?>" alt="..." style ="width: 200px" id ="img-size">
+                    <img src="<?php echo $a['Lien_image']; ?>" alt="..." style ="width: 200px" id ="img-size">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
-                        <h1 class="card-title"><?php echo $a[$i]['Titre']; ?></h1>
-                        <p class="card-text"><?php echo $a[$i]['Description']; ?></p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        <form action="pickaday_res.php" method="get">
-                            <input name="id" hidden value="<?php echo $a[$i]['id']; ?>">
-                            <input type="submit" class="btn btn-primary btn-user btn-block" value="Réservez maintenant">
-                        </form>
+                        <h1 class="card-title"><?php echo $a['Titre']; ?></h1>
+                        <p class="card-text"><?php echo $a['Description']; ?></p>
+                        <input name="id" hidden value="<?php echo $a['id']; ?>">
+                        <input type="submit" class="btn btn-primary btn-user btn-block" value="Réservez maintenant">
                     </div>
                 </div>
             </div>
@@ -48,6 +56,7 @@
                     </form>
 		  		</div>
 		  	</div>
+    </section>
 </body>
 </html>
 <script type="text/javascript"> 

@@ -19,15 +19,15 @@ class manager
 
         $donne = $req->fetch();
 
-        if ($donne){
-
-            $isPasswordCorrect = password_verify($user->getPassword(), $donne['password']);
-
-            if (!empty($donne) AND !empty($isPasswordCorrect)){
-                session_start();
+        if (password_verify($user->getPassword(), $donne['password'])){
+            session_start();
                 $_SESSION['id'] = $donne['id'];
                 $_SESSION['username'] = $donne['username'];
                 $_SESSION['role'] = $donne['role'];
+
+                var_dump($_SESSION);
+
+                die();
 
                 if($donne['role'] == 1){
                     header("Location: ../admin.php ");
@@ -36,7 +36,6 @@ class manager
                     header("Location: ../index.php ");
                 }
             }
-        }
         else{
             $_SESSION['errors'][0] = "Utilisateur n'existe pas";
             header("Location: ../views/login.php");

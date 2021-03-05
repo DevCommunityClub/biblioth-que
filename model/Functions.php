@@ -7,6 +7,7 @@ class Functions
 {
     private $donne;
     private $req;
+    private $id;
 
     public function Errors(Utilisateur $user){
         session_start();
@@ -56,6 +57,29 @@ class Functions
         return $this->req;
     }
 
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    public function fetch_media_info()
+    {
+        $bdd = new bdd();
+
+        $req=$bdd->getStart()->prepare('SELECT * FROM media WHERE id = :id');
+        $req->execute(array(
+            'id'=>$this->getId()
+        ));
+        $donne = $req->fetch();
+        $this->setReq($donne);
+
+    }
+
     public function fetch_user(){
         $bdd = new bdd();
 
@@ -63,7 +87,7 @@ class Functions
         $req->execute();
         $donne = $req->fetchAll();
         $this->setReq($donne);
-      }
+    }
 
     public function fetch_search(){
         $bdd = new bdd();
@@ -77,7 +101,7 @@ class Functions
     public function fetch_media(){
         $bdd = new bdd();
 
-        $req=$bdd->getStart()->prepare('SELECT * FROM media ');
+        $req=$bdd->getStart()->prepare('SELECT * FROM media');
         $req->execute();
         $donne = $req->fetchAll();
         $this->setReq($donne);
