@@ -97,7 +97,7 @@ class manager
 
     }
 
-    public function Modif(Utilisateur $user){
+    public function Modification(Utilisateur $user){
 
         $bdd = new bdd();
 

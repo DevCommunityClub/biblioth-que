@@ -56,7 +56,7 @@
                                                 ?>
                                             </ul>
                                         </div>
-                                    <?php } var_dump($_SESSION); session_destroy(); ?>
+                                    <?php } session_destroy(); ?>
                                     <form id="form" class="user" method="post" action="../traitement/traitement_login.php">
                                         <div class="form-group">
                                             <input type="text" class="form-control form-control-user"
