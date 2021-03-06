@@ -66,14 +66,9 @@
                                             <input type="password" class="form-control form-control-user"
                                                    name="password" placeholder="Mot de passe">
                                         </div>
-                                        <a href="javascript:;" onclick="document.getElementById('form').submit()" class="btn btn-primary btn-user btn-block">
-                                            Connectez-vous
-                                        </a>
+                                        <input type="submit" value="Se connecter" class="btn btn-primary btn-user btn-block">
                                     </form>
                                     <hr>
-                                    <div class="text-center">
-                                        <a class="small" href="forgot-password.html">Mot de passe oublié??</a>
-                                    </div>
                                     <div class="text-center">
                                         <a class="small" href="register.php">Créer un compte!</a>
                                     </div>

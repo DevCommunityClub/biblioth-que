@@ -19,28 +19,23 @@
                 <li>Réservation</li>
             </ol>
 
-            <form action = "recherche-multimedia.php" method = "get" name="Livres">
-                <input type = "search" name = "search">
-                <input type = "submit" name = "search" value = "Rechercher">
+            <form action="traitement/traitement_recherche.php" method="get" name="Livres">
+                <input type="search" placeholder="(ex.: L'Attaque des Titans, Manga, etc)" name="search" required>
+                <input type="submit" name="search" value="Rechercher">
             </form>
-
-            <?php
-
-              require_once 'model/Functions.php';
-
-              $search = new Functions([
-                "search" => $_POST["search"]
-              ]);
-              $managers = new managers();
-              $res = $managers->search($search);
-            ?>
 
         </div>
         <?php
-        $function = new Functions();
-        $function->fetch_media();
-        $a = $function->getReq();
+            $function = new Functions();
+        if (isset($_GET['search'])){
+            $a = $function->getReq();
+        }
+        else{
+            $function->fetch_media();
+            $a = $function->getReq();
+        }
         $count_1 = count($a);
+
         for ($i = 0; $i < $count_1; $i++) {
             ?>
             <div class="card mb-3" id = "Item_res">

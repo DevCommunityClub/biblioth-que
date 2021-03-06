@@ -43,7 +43,7 @@
                                 echo '</form>';
                             }
                             else{
-                                echo '<p class="card-text"><small class="text-muted">Ce livre est actuellement emprunter date de retour:</br>'.$a['Date_rendu'].'</small></p>';
+                                echo '<p class="card-text"><small class="text-muted">Ce livre est actuellement emprunter date de retour :</br>'.$a['Date_rendu'].'</small></p>';
                             }
                         ?>
                     </div>

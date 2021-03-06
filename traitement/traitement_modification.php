@@ -14,3 +14,5 @@ $user = new Utilisateur(array(
 
 $co = new manager();
 $co->Modification($user);
+
+header("Location: ../espace-membre.php");

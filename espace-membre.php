@@ -18,7 +18,7 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Modifier vos information !</h1>
                                     </div>
-                                    <form class="user" id="form" method="post" action="../traitement/traitement_modification.php">
+                                    <form class="user" id="form" method="post" action="traitement/traitement_modification.php">
                                         <div class="form-group row mb-2">
                                             <div class="col-sm-6 mb-3 mb-sm-0">
                                                 <input type="text" class="form-control form-control-user" id="exampleFirstName"
