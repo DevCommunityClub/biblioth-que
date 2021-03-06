@@ -23,6 +23,18 @@
                 <input type = "search" name = "search">
                 <input type = "submit" name = "search" value = "Rechercher">
             </form>
+
+            <?php
+
+              require_once 'model/Functions.php';
+
+              $search = new Functions([
+                "search" => $_POST["search"]
+              ]);
+              $managers = new managers();
+              $res = $managers->search($search);
+            ?>
+
         </div>
         <?php
         $function = new Functions();
