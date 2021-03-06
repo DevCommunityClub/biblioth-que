@@ -126,13 +126,13 @@ class Functions
 
           $c = $a->getRecherche()."%";
 
-        $select_terme = $bdd->getBdd()->prepare('SELECT * FROM media WHERE ucase(titre) LIKE ucase(:recherche)');
+        $select_terme = $bdd->getBdd()->prepare('SELECT * FROM media WHERE ucase(titre) LIKE ucase(:search)');
         $select_terme->execute(array(
           "recherche" => $c,
         ));
 
         $res = $select_terme->fetchall();
-          return $res;
+        return $res;
       }
 
     public function Mail_Contact(Utilisateur $user)
