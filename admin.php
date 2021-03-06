@@ -1,6 +1,6 @@
-<?php include './inc/sidenav.php'; ?>
+<?php include 'inc/sidenav.php'; ?>
 
-<?php include './inc/header.php'; ?>
+<?php include 'inc/header.php'; ?>
 
 <?php require_once 'model/Functions.php'; ?>
 

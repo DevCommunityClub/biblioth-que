@@ -5,7 +5,7 @@ require_once 'bdd.php';
 
 class Functions
 {
-    private $recherche
+    private $recherche;
     private $donne;
     private $req;
     private $id;

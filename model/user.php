@@ -8,7 +8,7 @@ class Utilisateur
     private $username;
     private $password;
     private $repassword;
-    private $recherche
+    private $recherche;
     private $mail;
     private $role;
 
@@ -177,4 +177,3 @@ class Utilisateur
     }
 
 }
-?>
