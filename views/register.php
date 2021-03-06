@@ -41,7 +41,6 @@
                             </div>
 
                             <?php
-                            var_dump($_SESSION);
                             if (!empty($_SESSION['errors'])){?>
                                 <div class="alert alert-danger" role="alert">
                                     <p>Un problème est intervenue :</p>

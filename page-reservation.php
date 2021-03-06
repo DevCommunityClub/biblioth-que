@@ -32,36 +32,25 @@
                     <div class="card-body">
                         <h1 class="card-title"><?php echo $a['Titre']; ?></h1>
                         <p class="card-text"><?php echo $a['Description']; ?></p>
-                        <input name="id" hidden value="<?php echo $a['id']; ?>">
-                        <input type="submit" class="btn btn-primary btn-user btn-block" value="Réservez maintenant">
+                        <?php
+                            if ($a['Date_emprunt'] == null AND $a['Date_rendu'] == null){
+                                echo '<form method="post" action="traitement/traitement_reservation.php">';
+                                echo '<input name="id" hidden value="'.$a['id'].'">';
+                                echo '<input type="date" hidden name="Date_emprunt" value="'.date("Y-m-d").'"/>';
+                                echo '<label class="mb-2">Date de rendu:</label></br>';
+                                echo '<input type="date" name="Date_rendu" class="input-text" placeholder="dd/mm/yyyy" required></br>';
+                                echo '<input type="submit" class="btn btn-primary btn-user btn-block mt-3" value="Réservez maintenant">';
+                                echo '</form>';
+                            }
+                            else{
+                                echo '<p class="card-text"><small class="text-muted">Ce livre est actuellement emprunter date de retour:</br>'.$a['Date_rendu'].'</small></p>';
+                            }
+                        ?>
                     </div>
                 </div>
             </div>
         </div>
-
-			<div class="dates-wrapper group">
-			
-			  	<div class="field clearfix date-range-start date-wrapper">
-                    <form method="post" action="traitement/traitement_reservation.php">
-                        <div class="label">
-                          <label for="datepicker-start">Date Emprunt:</label>
-                        </div>
-                        <div class="input">
-                          <input id="date" type="date" name="experience-start" class="input-text" placeholder="dd/mm/yyyy">
-                        </div>
-                        <p></p>
-                        <input type="submit" name="Réserver" id="centrer-objet"
-                        onclick="dateEmprunt()">
-				    <p></p>
-                    </form>
-		  		</div>
-		  	</div>
     </section>
+</main>
 </body>
 </html>
-<script type="text/javascript"> 
-function dateEmprunt(){
-//const dateEmprunt = document.getElementById('date').value;
-//console.log(document.getElementById('date').value);
-}
-</script>

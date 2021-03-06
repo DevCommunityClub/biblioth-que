@@ -89,14 +89,16 @@ class Functions
         $this->setReq($donne);
     }
 
-    public function fetch_search(){
+    public function reservation(array $param){
         $bdd = new bdd();
 
-        $req=$bdd->getStart()->prepare('SELECT id FROM media');
-        $req->execute();
-        $donne = $req->fetchAll();
-        $this->setReq($donne);
-      }
+        $req=$bdd->getStart()->prepare('UPDATE media SET Date_emprunt = :Date_emprunt, Date_rendu = :Date_rendu WHERE id = :id');
+        $req->execute(array(
+            'id' => $param['id'],
+            'Date_emprunt' => $param['Date_emprunt'],
+            'Date_rendu' => $param['Date_rendu']
+        ));
+    }
 
     public function fetch_media(){
         $bdd = new bdd();
@@ -140,18 +142,5 @@ class Functions
         $contact->add_message($_POST['message'], 'Message', 10);
 
         echo $contact->send();
-    }
-
-    public function date_emprunt()
-    {
-        $query = mysql_query("SELECT Date_emprunt FROM media WHERE Date_emprunt = '$Date_emprunt'");
-            if(Date_emprunt($query) == NULL){
-                // Pseudo déjà utilisé
-                echo 'Ce livre est disponible';
-            }else{
-                // Pseudo libre
-                mysql_query("INSERT INTO media (Date_retour) VALUES ((SELECT Date_emprunt INTERVAL 1 MONTH)))");
-            }
-
     }
 }

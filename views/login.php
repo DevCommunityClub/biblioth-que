@@ -48,7 +48,7 @@
                                             <p>Un problème est intervenue :</p>
                                             <ul>
                                                 <?php
-                                                for ($i=1; $i<6; $i++){
+                                                for ($i=0; $i<2; $i++){
                                                     if (!empty($_SESSION['errors'][$i])){
                                                         echo '<li>'.$_SESSION['errors'][$i].'</li>';
                                                     }
@@ -56,11 +56,11 @@
                                                 ?>
                                             </ul>
                                         </div>
-                                    <?php } session_destroy(); ?>
+                                    <?php } var_dump($_SESSION); session_destroy(); ?>
                                     <form id="form" class="user" method="post" action="../traitement/traitement_login.php">
                                         <div class="form-group">
                                             <input type="text" class="form-control form-control-user"
-                                                   name="username" placeholder="Entrer votre pseudo ou email">
+                                                   name="username" placeholder="Entrer votre pseudo">
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user"

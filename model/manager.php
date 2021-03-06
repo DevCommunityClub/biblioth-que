@@ -12,23 +12,27 @@ class manager
 
         $bdd = new bdd();
 
-        $req=$bdd->getStart()->prepare('SELECT * FROM users WHERE username = :username OR mail = :username');
+        $req=$bdd->getStart()->prepare('SELECT * FROM users WHERE username = :username');
         $req->execute(array(
             'username'=>$user->getUsername()
         ));
 
-        $donne = $req->fetch();
+        $resultat = $req->fetch();
 
-        if (password_verify($user->getPassword(), $donne['password'])){
-            session_start();
+        $isPasswordCorrect =  password_verify($user->getPassword(), $resultat['password']);
+
+        if (!$resultat)
+        {
+            $_SESSION['errors'][0] = "Utilisateur n'existe pas";
+            header("Location: ../views/login.php");
+        }
+        else
+        {
+            if ($isPasswordCorrect) {
+                session_start();
                 $_SESSION['id'] = $donne['id'];
                 $_SESSION['username'] = $donne['username'];
                 $_SESSION['role'] = $donne['role'];
-
-                var_dump($_SESSION);
-
-                die();
-
                 if($donne['role'] == 1){
                     header("Location: ../admin.php ");
                 }
@@ -36,9 +40,10 @@ class manager
                     header("Location: ../index.php ");
                 }
             }
-        else{
-            $_SESSION['errors'][0] = "Utilisateur n'existe pas";
-            header("Location: ../views/login.php");
+            else {
+                $_SESSION['errors'][1] = "Mauvais identifiant ou mot de passe !";
+                header("Location: ../views/login.php");
+            }
         }
     }
 
