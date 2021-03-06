@@ -48,13 +48,24 @@
                         </form>
                         <form action="page-reservation.php" method="get">
                             <input name="id" hidden value="<?php echo $a[$i]['id']; ?>">
-                            <input type="submit" class="btn btn-primary btn-user btn-block" value="Réservez maintenant">
+                            <input type="search" class="btn btn-primary btn-user btn-block" value="Réservez maintenant" name="recherche">
                         </form>
                     </div>
                 </div>
             </div>
         </div>
-        <?php } ?>
+
+        <?php
+        
+        require_once "model/Functions.php"
+
+        $user = new cd([
+        "recherche" => $_POST["recherche"],
+        ]);
+        $managers = new managers();
+        $res = $managers->rechercheCD($user); 
+        ?>
+
     </section><!-- End Breadcrumbs -->
 
     <!-- ======= Pricing Section ======= -->

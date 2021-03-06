@@ -8,6 +8,7 @@ class Utilisateur
     private $username;
     private $password;
     private $repassword;
+    private $recherche
     private $mail;
     private $role;
 
@@ -41,6 +42,11 @@ class Utilisateur
     public function getNom()
     {
         return $this->nom;
+    }
+
+    public function getRecherche()
+    {
+        return $this->recherche;
     }
 
     public function getPrenom()
@@ -106,6 +112,15 @@ class Utilisateur
         if (is_string($prenom))
         {
             $this->prenom = $prenom;
+        }
+    }
+
+    public function setRecherche($recherche)
+    {
+        // On vérifie qu'il s'agit bien d'une chaîne de caractères.
+        if (is_string($recherche))
+        {
+            $this->recherche = $recherche;
         }
     }
     

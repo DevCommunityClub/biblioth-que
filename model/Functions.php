@@ -5,6 +5,7 @@ require_once 'bdd.php';
 
 class Functions
 {
+    private $recherche
     private $donne;
     private $req;
     private $id;
@@ -45,6 +46,16 @@ class Functions
     public function getDonne()
     {
         return $this->donne;
+    }
+
+    public function setRecherche($recherche)
+    {
+        $this->recherche = $recherche;
+    }
+
+    public function getRecherche()
+    {
+        return $this->recherche;
     }
 
     public function setReq($req)
@@ -108,6 +119,21 @@ class Functions
         $donne = $req->fetchAll();
         $this->setReq($donne);
     }
+
+    public function recherche($a){
+        $bdd = new bdd();
+        session_start();
+
+          $c = $a->getRecherche()."%";
+
+        $select_terme = $bdd->getBdd()->prepare('SELECT * FROM media WHERE ucase(titre) LIKE ucase(:recherche)');
+        $select_terme->execute(array(
+          "recherche" => $c,
+        ));
+
+        $res = $select_terme->fetchall();
+          return $res;
+      }
 
     public function Mail_Contact(Utilisateur $user)
     {
